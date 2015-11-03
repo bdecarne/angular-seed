@@ -7,7 +7,7 @@ var del = require('del');
 /**
  * build
  **/
-gulp.task('build:dist', ['clean', 'styles:dist', 'scripts:dist', 'assets:dist', 'html:dist']);
+gulp.task('build:dist', ['clean', 'styles:dist', 'scripts:dist', 'assets:dist', 'html:dist', 'copy:dist']);
 
 /**
  * clean
