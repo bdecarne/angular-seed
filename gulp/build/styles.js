@@ -9,7 +9,6 @@ var $ = require('gulp-load-plugins')({
  * styles
  **/
 gulp.task('styles', function () {
-
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber(function(error) {
       $.util.log($.util.colors.red(error.message));
@@ -19,10 +18,10 @@ gulp.task('styles', function () {
     }))
     .pipe($.sass({style: 'expanded'}))
     .pipe($.autoprefixer(/*'last 1 version, ie 10, ie 11'*/))
+    .pipe($.importCss())
     .pipe(gulp.dest('.tmp/styles'))
     .pipe($.size());
 });
-
 
 gulp.task('styles:dist', ['styles'], function() {
   return gulp.src('.tmp/styles/**/*.css')
