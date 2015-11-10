@@ -30,7 +30,6 @@ gulp.task('scripts', ['config'], function() {
 
 gulp.task('scripts:dist', ['scripts', 'templates:dist'], function() {
     return gulp.src(['.tmp/scripts/app.js', '.tmp/templates/templates.js'])
-        .pipe($.include())
         .pipe($.concat('app.js'))
         .pipe($.ngAnnotate())
         .pipe($.uglify().on('error', console.error.bind(console)))
