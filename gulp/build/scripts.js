@@ -22,7 +22,7 @@ gulp.task('config', function() {
  **/
 gulp.task('scripts', ['config'], function() {
     return gulp.src(['app/scripts/app.js', '.tmp/scripts/config.js'])
-        .pipe($.include())
+        .pipe($.include().on('error', $.util.log))
         .pipe($.concat('app.js'))
         .pipe(gulp.dest('.tmp/scripts'))
         .pipe($.size());
@@ -32,7 +32,7 @@ gulp.task('scripts:dist', ['scripts', 'templates:dist'], function() {
     return gulp.src(['.tmp/scripts/app.js', '.tmp/templates/templates.js'])
         .pipe($.concat('app.js'))
         .pipe($.ngAnnotate())
-        .pipe($.uglify().on('error', console.error.bind(console)))
+        .pipe($.uglify().on('error', $.util.log))
         .pipe(gulp.dest('dist/scripts'))
         .pipe($.size());
 });
