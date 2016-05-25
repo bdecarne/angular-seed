@@ -17,11 +17,10 @@ gulp.task('templates', function () {
 
 gulp.task('templates:dist', ['templates'], function() {
   return gulp.src(['.tmp/templates/**/*.html'])
-    .pipe(htmlify())
-    .pipe($.minifyHtml({
-      empty: true,
-      spare: true,
-      quotes: true
+    .pipe($.angularHtmlify())
+    .pipe($.htmlmin({
+        removeComments: true,
+        collapseWhitespace: true
     }))
     .pipe($.ngHtml2js({
       moduleName: 'app.templates',
@@ -38,11 +37,10 @@ gulp.task('templates:dist', ['templates'], function() {
  **/
 gulp.task('html:dist', function () {
   return gulp.src('app/*.html')
-    .pipe(htmlify())
-    .pipe($.minifyHtml({
-      empty: true,
-      spare: true,
-      quotes: true
+    .pipe($.angularHtmlify())
+    .pipe($.htmlmin({
+        removeComments: true,
+        collapseWhitespace: true
     }))
     .pipe(gulp.dest('dist'))
     .pipe($.size());

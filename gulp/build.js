@@ -14,7 +14,6 @@ gulp.task('build:dist', ['clean', 'styles:dist', 'scripts:dist', 'assets:dist', 
  * @todo : https://github.com/gulpjs/gulp/blob/master/docs/recipes/running-tasks-in-series.md
  * @see https://github.com/gulpjs/gulp/issues/686
  **/
-gulp.task('clean', function (cb) {
-    del.sync(['.tmp', 'dist']);
-    cb();
+gulp.task('clean', function () {
+    return del.sync(['.tmp', 'dist']);
 });
