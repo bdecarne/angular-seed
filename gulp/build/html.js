@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp');
-var htmlify = require('gulp-angular-htmlify');
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*']
 });
