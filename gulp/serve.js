@@ -10,7 +10,7 @@ var config = require('./config');
 function browserSyncInit(baseDir, files, browser) {
     browser = browser === undefined ? 'default' : browser;
 
-    var rewrite = modRewrite(['!\.html|\.woff|\.js|\.ttf|\.svg|\.css|\.png|\.jpg /index.html [L]']);
+    var rewrite = modRewrite(['!\.html|\.woff|\.js|\.ttf|\.svg|\.css|\.png|\.eot|\.svg|\.ttf|\.woff2|\.otf$ /index.html [L]']);
 
     // connect middlewares
     var middlewares = [rewrite];
