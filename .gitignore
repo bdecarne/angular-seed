@@ -1,6 +1,9 @@
 .idea
+/project.sublime-project
+/project.sublime-workspace
 node_modules
 bower_components
-config/config.yml
+config/config.app.yml
+config/config.gulp.yml
 .tmp
 dist

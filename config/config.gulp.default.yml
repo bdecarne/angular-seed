@@ -1,0 +1,6 @@
+# you have to make a copy as "config.dev.yml"
+# this config will be accessible in gulp workflow
+
+browsersync:
+  open: false
+  https: false

@@ -1,0 +1,5 @@
+# you have to make a copy as "config.app.yml"
+# this config will be accessible in application
+
+foo:
+  var2: re-two

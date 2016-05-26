@@ -9,7 +9,7 @@ var $ = require('gulp-load-plugins')({
  * config
  **/
 gulp.task('config', function() {
-    return gulp.src('./config/config.yml')
+    return gulp.src('./config/config.app.yml')
       .pipe($.yaml())
       .pipe($.extend('config.js'))
       .pipe($.wrap('angular.module(\'app.config\', []).constant(\'appConfig\', <%= contents %>);'))

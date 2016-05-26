@@ -17,8 +17,8 @@
     "gulp-concat": "^2.6.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-extend": "^0.2.0",
-    "gulp-imagemin": "^3.0.1",
     "gulp-htmlmin": "^2.0.0",
+    "gulp-imagemin": "^3.0.1",
     "gulp-import-css": "^0.1.2",
     "gulp-include": "^2.2.1",
     "gulp-load-plugins": "^1.2.4",
@@ -31,6 +31,7 @@
     "gulp-util": "^3.0.7",
     "gulp-wrap": "^0.13.0",
     "gulp-yaml": "^1.0.1",
+    "js-yaml": "^3.6.1",
     "require-dir": "^0.3.0"
   },
   "dependencies": {

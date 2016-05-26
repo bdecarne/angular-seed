@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var modRewrite = require('connect-modrewrite');
 var url = require('url');
+var config = require('./config');
 
 function browserSyncInit(baseDir, files, browser) {
     browser = browser === undefined ? 'default' : browser;
@@ -21,7 +22,8 @@ function browserSyncInit(baseDir, files, browser) {
             middleware: middlewares
         },
         browser: browser,
-        open: false
+        open: config.browsersync.open,
+        https: config.browsersync.https
     };
 
     if(files) {
