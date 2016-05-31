@@ -4,6 +4,15 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*']
 });
+var options = {};
+
+options.sass = {
+    errLogToConsole: true,
+    sourceMap: 'sass',
+    sourceComments: 'map',
+    precision: 10,
+    style: 'expanded'
+};
 
 /**
  * styles
@@ -16,7 +25,7 @@ gulp.task('styles', function () {
       // prevent task crash on error
       this.emit('end');
     }))
-    .pipe($.sass({style: 'expanded'}))
+    .pipe($.sass(options.sass))
     .pipe($.autoprefixer(/*'last 1 version, ie 10, ie 11'*/))
     .pipe($.importCss())
     .pipe(gulp.dest('.tmp/styles'))
