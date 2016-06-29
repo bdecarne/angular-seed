@@ -37,7 +37,7 @@
      */
     function config($locationProvider, $urlRouterProvider) {
         // location
-        $locationProvider/*.html5Mode(true)*/.hashPrefix('!');   // incompatible avec npm proxy
+        $locationProvider.html5Mode(true).hashPrefix('!');   // incompatible avec npm proxy
         // ui-router
         $urlRouterProvider.otherwise("/");
     }
